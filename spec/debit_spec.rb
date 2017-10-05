@@ -1,12 +1,11 @@
-require 'debit'
+require 'debit.rb'
 
 describe Debit do
-  let(:debit) { Debit.new }
+  let(:debit) { Debit.new(10) }
 
   context '#withdraw' do
-    it 'Allows the client to input an amount to be withdrawn. This is stored as a debit value' do
-      debit.withdraw(10)
-      expect(debit.debit).to eq 10
+    it 'Allows the client to input an amount to be withdrawn then stores it as a debit value' do
+      expect(debit.debit_amount).to eq 10
     end
   end
 end
