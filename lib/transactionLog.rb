@@ -6,4 +6,8 @@ class TransactionLog
   def initialize
     @account = []
   end
+
+  def transaction_string
+    ""
+  end
 end

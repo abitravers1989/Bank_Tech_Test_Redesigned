@@ -10,10 +10,14 @@ describe TransactionLog do
     end
   end
 
-  # context '#'
-  #
-  # context '#transaction_creator' do
-  #   it 'Stores each transaction in its own array' do
-  #   end
-  # end
+  context '#transaction_string' do
+    it 'Creates a string which reprsents a transaction' do
+       expect(transaction_log.transaction_string).to be_instance_of String
+    end
+  end
+
+  context '#transaction_creator' do
+    it 'Stores each transaction in its own array' do
+    end
+  end
 end
