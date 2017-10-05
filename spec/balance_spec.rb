@@ -4,28 +4,28 @@ describe Balance do
   let(:balance) { Balance.new }
 
   context '#initialize' do
-    it 'the current balance starts at zero' do
+    it 'The current balance starts at zero' do
       expect(balance.current_balance).to eq 0
     end
   end
 
   context '#calculating_balance' do
     it 'Calculated the balance when passed the amount deposited' do
-       expect(balance.calculating_balance(10)).to eq 10
+      expect(balance.calculating_balance(10)).to eq 10
     end
 
     it 'Changes the current_balance variable when passed a credit (+ve) amount' do
-       balance.calculating_balance(20)
-       expect(balance.current_balance).to eq 20
+      balance.calculating_balance(20)
+      expect(balance.current_balance).to eq 20
     end
 
     it 'Calculated the balance when passed the amount withdrawn' do
-       expect(balance.calculating_balance(-10)).to eq -10
+      expect(balance.calculating_balance(-10)).to eq -10
     end
 
     it 'Changes the current_balance variable when passed a debit (-ve) amount' do
-       balance.calculating_balance(-20)
-       expect(balance.current_balance).to eq -20
+      balance.calculating_balance(-20)
+      expect(balance.current_balance).to eq -20
     end
   end
 end

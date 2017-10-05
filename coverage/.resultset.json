@@ -24,8 +24,40 @@
         null,
         null,
         null
+      ],
+      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/spec/transactionLog_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/lib/transactionLog.rb": [
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1507205972
+    "timestamp": 1507213649
   }
 }
