@@ -1,4 +1,4 @@
-#This class stores a single transaction's credit or debit amount
+#This class stores a single transaction's debit amount
 class Debit
   attr_accessor :debit_amount
 

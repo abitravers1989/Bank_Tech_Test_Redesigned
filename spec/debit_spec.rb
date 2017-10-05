@@ -1,4 +1,4 @@
-require 'debit.rb'
+require 'debit'
 
 describe Debit do
   let(:debit) { Debit.new(10) }
