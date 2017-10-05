@@ -7,4 +7,8 @@ class Balance
     @current_balance = 0
   end
 
+  def calculating_balance(amount)
+    @current_balance += amount
+  end
+
 end
