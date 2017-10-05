@@ -16,8 +16,10 @@ describe TransactionLog do
     end
   end
 
-  context '#transaction_creator' do
-    it 'Stores each transaction in its own array' do
-    end
-  end
-end
+end 
+
+#   context '#transaction_creator' do
+#     it 'Stores each transaction in its own array' do
+#     end
+#   end
+# end
