@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/spec/transaction_spec.rb": [
+      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/spec/debit_spec.rb": [
         1,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/lib/transaction.rb": [
+      "/Users/abitravers/gitDir/Bank_Tech_Test_Redesigned/lib/debit.rb": [
         null,
         1,
         1,
@@ -26,10 +26,11 @@
         null,
         1,
         1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1507201409
+    "timestamp": 1507201607
   }
 }

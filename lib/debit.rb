@@ -1,5 +1,5 @@
 #This class stores a single transaction's credit or debit amount
-class Transaction
+class Debit
   attr_accessor :debit
 
   def initialize
@@ -9,4 +9,5 @@ class Transaction
   def withdraw(n)
     @debit = n
   end
+
 end
