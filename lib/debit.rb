@@ -3,7 +3,7 @@ class Debit
   attr_accessor :debit_amount
 
   def initialize(amount)
-    @debit_amount = amount
+    @debit_amount = -amount
   end
 
 end
