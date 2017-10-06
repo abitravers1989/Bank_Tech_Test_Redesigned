@@ -6,8 +6,7 @@ require 'output.rb'
 require 'StatementDisplay.rb'
 require 'output.rb'
 
-
-#The class is where the user actions are contained. It is used to call on the other classes and control the flow of information.
+# The class is where the user actions are contained. It is used to call on the other classes and control the flow of information.
 
 class BankController
   attr_accessor :balance, :credit, :debit, :date, :transaction
@@ -37,7 +36,7 @@ class BankController
     @credit = Credit.new(amount)
     @date = DateNow.new
     @balance = @balance.calculating_balance(@credit.credit_amount)
-    @debit = "||"
+    @debit = '||'
     @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
   end
 
@@ -45,15 +44,13 @@ class BankController
     @debit = Debit.new(amount)
     @date = DateNow.new
     @balance = @balance.calculating_balance(@debit.debit_amount)
-    @credit = "||"
+    @credit = '||'
     @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
   end
-
 
   def statement_printing_process
     statement = Statement.new(@transaction.account_transactions)
     statement.statment_header
     statement.transaction_information
   end
-
 end

@@ -10,6 +10,8 @@ require 'output.rb'
 # This test is intended as more of a feature test since this class only calls on other classes instead of doing anything itself
 describe BankController do
   let (:bank_controller) { BankController.new }
+  let (:balance) { Balance.new }
+  let (:transaction) { TransactionLog.new }
 
   context '#withdrawal_process' do
     it 'Calls on the other classes which are used in the withdrawal process' do
@@ -17,7 +19,7 @@ describe BankController do
       date = DateNow.new
       balance = Balance.new
       balance = balance.calculating_balance(debit.debit_amount)
-      credit = "||"
+      credit = '||'
       transaction = TransactionLog.new
       transaction_log = transaction.createing_transaction_array(date.createdate, debit.debit_amount, credit, balance)
       p transaction_log
@@ -30,15 +32,18 @@ describe BankController do
       date = DateNow.new
       balance = Balance.new
       balance = balance.calculating_balance(credit.credit_amount)
-      debit = "||"
+      debit = '||'
       transaction = TransactionLog.new
       transaction_log = transaction.createing_transaction_array(date.createdate, credit.credit_amount, debit, balance)
       p transaction_log
     end
   end
+
+  # context '#statement_printing_process' do
+  #   it 'Prints the statement' do
+  #      bank_controller.deposit_process(10)
+  #      bank_controller.withdrawal_process(10)
+  #      p bank_controller.statement_printing_process
+  #   end
+  # end
 end
-#   context '#statement_printing_process' do
-#     it 'Prints the statement' do
-#
-#   end
-# end
