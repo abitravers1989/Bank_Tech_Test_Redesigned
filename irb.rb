@@ -33,14 +33,12 @@ class Balance
   end
 end
 
-
 # withdrawal process
 credit = Credit.new(10)
 date = DateNow.new
 balance = Balance.new
 balance.calculating_balance(credit.credit_amount)
 
-pass credit.credit_amount   balance    date through to transaction string 
-
+pass credit.credit_amount balance date through to transaction string
 
 debit = Debit.new(10)

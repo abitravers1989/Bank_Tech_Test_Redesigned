@@ -21,10 +21,10 @@ class BankController
     @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
   end
 
-  def statement_printing_process(transaction_array)
-    statement = Statement.new(transaction_array)
+  def statement_printing_process(@transaction.account_transactions)
+    statement = Statement.new(@transaction.account_transactions)
     statement.statment_header
-    statement_printing_process(@transaction.account_transactions)
+    statement.transaction_information
   end
 
   def deposit_process(amount)
