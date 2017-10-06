@@ -3,9 +3,8 @@ require 'balance.rb'
 require 'credit.rb'
 require 'dateNow.rb'
 require 'debit.rb'
-require 'output.rb'
 require 'StatementDisplay.rb'
-require 'output.rb'
+
 
 # This test is intended as more of a feature test since this class only calls on other classes instead of doing anything itself
 describe BankController do
@@ -39,11 +38,13 @@ describe BankController do
     end
   end
 
-  # context '#statement_printing_process' do
-  #   it 'Prints the statement' do
-  #      bank_controller.deposit_process(10)
-  #      bank_controller.withdrawal_process(10)
-  #      p bank_controller.statement_printing_process
-  #   end
-  # end
+  context '#Acceptance criteria' do
+    it 'Tests the Acceptance criteria of the test' do
+       bank_account = BankController.new
+       bank_account.deposit_process(1000)
+       bank_account.deposit_process(2000)
+       bank_account.withdrawal_process(500)
+       p bank_account.statement_printing_process
+    end
+  end
 end
