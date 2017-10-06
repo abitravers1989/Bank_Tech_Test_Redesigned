@@ -12,9 +12,8 @@ describe TransactionLog do
 
   context '#createing_transaction_array' do
     it 'Creates a string which reprsents a transaction' do
-       transaction_log.createing_transaction_array("05/10/2017", 10, 0, 10)
-       expect(transaction_log.account_transactions).to_not be_empty
+      transaction_log.createing_transaction_array('05/10/2017', 10, 0, 10)
+      expect(transaction_log.account_transactions).to_not be_empty
     end
   end
-
 end

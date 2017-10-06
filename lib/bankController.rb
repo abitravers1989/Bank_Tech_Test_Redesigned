@@ -1,3 +1,12 @@
+require 'balance.rb'
+require 'credit.rb'
+require 'dateNow.rb'
+require 'debit.rb'
+require 'output.rb'
+require 'StatementDisplay.rb'
+require 'output.rb'
+
+
 #The class is where the user actions are contained. It is used to call on the other classes and control the flow of information.
 
 class BankController
@@ -17,14 +26,8 @@ class BankController
     @balance = Balance.new
     @balance = @balance.calculating_balance(@debit.debit_amount)
     @credit = "||"
-    @transaction = TransactionLog.new
-    @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
-  end
-
-  def statement_printing_process(@transaction.account_transactions)
-    statement = Statement.new(@transaction.account_transactions)
-    statement.statment_header
-    statement.transaction_information
+    transaction = TransactionLog.new
+    @transaction = transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
   end
 
   def deposit_process(amount)
@@ -33,8 +36,14 @@ class BankController
     @balance = Balance.new
     @balance = @balance.calculating_balance(@credit.credit_amount)
     @debit = "||"
-    @transaction = TransactionLog.new(@date.createdate, @credit.credit_amount, @debit, @balance)
-    @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
+    transaction = TransactionLog.new
+    @transaction = transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
+  end
+
+  def statement_printing_process
+    statement = Statement.new(@transaction.account_transactions)
+    statement.statment_header
+    statement.transaction_information
   end
 
 end
