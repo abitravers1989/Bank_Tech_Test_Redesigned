@@ -37,3 +37,8 @@ describe BankController do
     end
   end
 end
+#   context '#statement_printing_process' do
+#     it 'Prints the statement' do
+#
+#   end
+# end
