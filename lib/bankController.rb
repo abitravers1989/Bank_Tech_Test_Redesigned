@@ -5,7 +5,7 @@ require 'debit.rb'
 require 'StatementDisplay.rb'
 
 # The class is where the user actions are contained. It is used to call on the other classes and control the flow of information.
-
+# How to make sure it is the same transaction log (same instance of the transaction log) every time
 class BankController
   attr_accessor :balance, :credit, :debit, :date, :transaction
 
@@ -17,26 +17,14 @@ class BankController
     @transaction = TransactionLog.new
   end
 
-  # def balance
-  #   @balance = Balance.new
-  # end
-  #
-  # def transaction
-  #   @transaction = TransactionLog.new
-  # end
-  #
-  # def create_balance_and_transaction_for_account
-  #   balance
-  #   transaction
-  # end
-
   def deposit_process(amount)
     @credit = Credit.new(amount)
     @date = DateNow.new
     @balance = @balance.calculating_balance(@credit.credit_amount)
     @debit = '||'
     transaction = @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
-    @transaction += transaction
+    @transaction.account_transactions << transaction
+    p @transaction
   end
 
   def withdrawal_process(amount)
@@ -45,7 +33,8 @@ class BankController
     @balance = @balance.calculating_balance(@debit.debit_amount)
     @credit = '||'
     transaction =  @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
-    @transaction += transaction
+    @transaction.account_transactions << transaction
+    p @transaction
   end
 
   def statement_printing_process
