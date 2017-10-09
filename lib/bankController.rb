@@ -20,11 +20,10 @@ class BankController
   def deposit_process(amount)
     @credit = Credit.new(amount)
     @date = DateNow.new
-    @balance = @balance.calculating_balance(@credit.credit_amount)
+    current_balance = @balance.calculating_balance(@credit.credit_amount)
     @debit = '||'
-    transaction = @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, @balance)
-    @transaction.account_transactions << transaction
-    p @transaction
+    current_transaction = @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, current_balance)
+    @transaction.account_transactions << current_transaction
   end
 
   def withdrawal_process(amount)
