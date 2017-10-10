@@ -10,6 +10,9 @@ require 'StatementDisplay.rb'
 describe BankController do
   let (:bank_controller) { BankController.new }
   let (:balance) { Balance.new }
+  # p balance
+  # p :balance
+  # p "inital balance"
   let (:transaction) { TransactionLog.new }
   let (:date) { DateNow.new }
 
@@ -18,7 +21,9 @@ describe BankController do
   context '#deposit_process' do
     it 'Calls on the other classes which are used in the deposit process' do
       credit = Credit.new(10)
-      balance = balance.calculating_balance(credit.credit_amount)
+      p balance
+      p :balance
+      p "second balance"
       debit = '||'
       current_balance = balance.calculating_balance(credit.credit_amount)
       current_transaction = transaction.createing_transaction_array(date.createdate, credit.credit_amount, debit, current_balance)
