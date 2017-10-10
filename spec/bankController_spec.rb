@@ -10,9 +10,6 @@ require 'StatementDisplay.rb'
 describe BankController do
   let (:bank_controller) { BankController.new }
   let (:balance) { Balance.new }
-  # p balance
-  # p :balance
-  # p "inital balance"
   let (:transaction) { TransactionLog.new }
   let (:date) { DateNow.new }
 
@@ -21,9 +18,6 @@ describe BankController do
   context '#deposit_process' do
     it 'Calls on the other classes which are used in the deposit process' do
       credit = Credit.new(10)
-      p balance
-      p :balance
-      p "second balance"
       debit = '||'
       current_balance = balance.calculating_balance(credit.credit_amount)
       current_transaction = transaction.createing_transaction_array(date.createdate, credit.credit_amount, debit, current_balance)
@@ -31,19 +25,22 @@ describe BankController do
       p transaction
     end
   end
+
+# issue is this creates a new instance of transaction (a new TransactionLog object)
+  context '#withdrawal_process' do
+    it 'Calls on the other classes which are used in the withdrawal process' do
+      debit = Debit.new(10)
+      date = DateNow.new
+      current_balance = balance.calculating_balance(debit.debit_amount)
+      credit = '||'
+      current_transaction = transaction.createing_transaction_array(date.createdate, debit.debit_amount, credit, balance)
+      transaction.account_transactions << current_transaction
+      p transaction
+    end
+  end
 end
 
-#   context '#withdrawal_process' do
-#     it 'Calls on the other classes which are used in the withdrawal process' do
-#       debit = Debit.new(10)
-#       date = DateNow.new
-#       balance = balance.calculating_balance(debit.debit_amount)
-#       credit = '||'
-#       transaction = TransactionLog.new
-#       transaction_log = transaction.createing_transaction_array(date.createdate, debit.debit_amount, credit, balance)
-#       p transaction_log
-#     end
-#   end
+
 ##   context '#Acceptance criteria' do
 #     it 'Tests the Acceptance criteria of the test' do
 #        bank_account = BankController.new
