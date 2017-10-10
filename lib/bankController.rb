@@ -29,14 +29,14 @@ class BankController
   def withdrawal_process(amount)
     @debit = Debit.new(amount)
     @date = DateNow.new
-    current_balance =  @balance.calculating_balance(@debit.debit_amount)
+    current_balance = @balance.calculating_balance(@debit.debit_amount)
     @credit = '||'
     current_transaction = @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
     @transaction.account_transactions << transaction
   end
 
   def statement_printing_process
-    statement = Statement.new(@transaction.account_transactions)
+    statement = StatementDisplay.new(@transaction.account_transactions)
     statement.statment_header
     statement.transaction_information
   end

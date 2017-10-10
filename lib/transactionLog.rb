@@ -4,7 +4,7 @@ class TransactionLog
   attr_accessor :account_transactions
 
   def initialize
-    @account_transactions = [] 
+    @account_transactions = []
   end
 
   def createing_transaction_array(date, crdit, debit, balance)
