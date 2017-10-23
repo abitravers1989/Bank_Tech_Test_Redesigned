@@ -30,7 +30,7 @@ class BankController
     @date = DateNow.new
     current_balance = @balance.calculating_balance(@debit.debit_amount)
     @credit = '||'
-    current_transaction = @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
+    current_transaction = @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, current_balance)
   end
 
   def statement_printing_process
