@@ -23,7 +23,6 @@ class BankController
     current_balance = @balance.calculating_balance(@credit.credit_amount)
     @debit = '||'
     current_transaction = @transaction.createing_transaction_array(@date.createdate, @credit.credit_amount, @debit, current_balance)
-    @transaction.account_transactions << current_transaction
   end
 
   def withdrawal_process(amount)
@@ -32,7 +31,6 @@ class BankController
     current_balance = @balance.calculating_balance(@debit.debit_amount)
     @credit = '||'
     current_transaction = @transaction.createing_transaction_array(@date.createdate, @debit.debit_amount, @credit, @balance)
-    @transaction.account_transactions << transaction
   end
 
   def statement_printing_process

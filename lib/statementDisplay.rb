@@ -22,5 +22,5 @@ class StatementDisplay
   end
 end
 
-statement = StatementDisplay.new([['05/10/2017', 10, 0, 10], ['05/10/2017', 10, 0, 10]])
-statement.transaction_information
+# statement = StatementDisplay.new([['05/10/2017', 10, 0, 10], ['05/10/2017', 10, 0, 10]])
+# statement.transaction_information
